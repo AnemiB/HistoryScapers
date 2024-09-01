@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +7,6 @@ body {
     color: #fff;
 }
 
-/* Header Styling */
 header {
     background-color: #f8b7c0;
     padding: 10px 10%;
@@ -17,7 +16,6 @@ header {
     position: relative;
 }
 
-/* Menu Icon Styling */
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
@@ -25,13 +23,11 @@ header {
     left: 1%;
 }
 
-/* Logo Styling */
 .logo {
     text-align: center;
     margin-left: 600px;
 }
 
-/* Navigation Menu Styling */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -77,18 +73,15 @@ nav ul li a {
     margin-top: -0.3px !important;
 }
 
-/* Main Content Styling */
 main {
     padding: 20px 15%;
 }
 
-/* Heading Styling */
 h1 {
     color: #f8b7c0;
     text-align: center;
 }
 
-/* Form Styling */
 form {
     background-color: #3c3c3c;
     padding: 20px;
