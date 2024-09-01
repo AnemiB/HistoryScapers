@@ -1,14 +1,12 @@
 <?php
-include '../config.php'; // Include your database connection
-session_start(); // Start the session to access session variables
+include '../config.php'; 
+session_start(); 
 
-// Ensure the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../index.php");
     exit();
 }
 
-// Fetch current user details
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT username, email FROM users WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
@@ -17,14 +15,13 @@ $stmt->execute();
 $user_result = $stmt->get_result();
 $user = $user_result->fetch_assoc();
 
-// Handle form submission for updating username, email, and password
+// Form submission for updating username, email, and password
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $new_username = $_POST['new_username'];
     $new_email = $_POST['new_email'];
     $old_password = $_POST['old_password'];
     $new_password = $_POST['new_password'];
 
-    // Validate inputs
     $update_needed = false;
 
     if (!empty($new_username)) {
