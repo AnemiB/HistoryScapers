@@ -53,14 +53,14 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #b22222; /* Firebrick color */
+    background-color: #b22222; 
     color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
 .login-form button:hover {
-    background-color: #8b0000; /* Dark red color */
+    background-color: #8b0000; 
 }
 
 .signup-link {
