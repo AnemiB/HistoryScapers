@@ -1,33 +1,29 @@
 <?php
-session_start(); // Start the session
+session_start();
 
-require '../config.php'; // Include the config file for database connection
-
-// Ensure the session user_id is set
+require '../config.php'; 
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('You need to log in to create a post.'); window.location.href = '../index.php';</script>";
     exit();
 }
 
-// Handle form submission and post creation
+// Form submission and post creation
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user_id = $_SESSION['user_id']; // Get the logged-in user's ID from the session
-    $question_title = $_POST['title']; // Correct field name
+    $user_id = $_SESSION['user_id']; 
+    $question_title = $_POST['title']; 
     $question_body = $_POST['body'];
-    $question_image_url = null; // Initialize image path as null
+    $question_image_url = null; 
 
-    // Handle optional image upload
+    // Optional image upload
     if (!empty($_FILES["image"]["name"])) {
-        $target_dir = "../uploads/"; // Ensure the uploads folder exists in the correct directory
+        $target_dir = "../uploads/"; 
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            $question_image_url = $target_file; // Store the image path if upload is successful
+            $question_image_url = $target_file; 
         } else {
             echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
         }
     }
-
-    // Insert post details into the database
     $sql = "INSERT INTO questions (user_id, question_title, question_body, question_image_url) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
@@ -45,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     $stmt->close();
-    $conn->close(); // Close the database connection
+    $conn->close(); 
 }
 ?>
 
