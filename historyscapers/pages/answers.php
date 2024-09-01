@@ -1,8 +1,6 @@
 <?php
-include '../config.php'; // Include your database connection
-session_start(); // Start the session to access session variables
-
-// Get the question ID from the URL
+include '../config.php'; 
+session_start(); 
 $question_id = $_GET['question_id'] ?? 0;
 
 // Fetch the question details
@@ -35,23 +33,19 @@ $comments_stmt->bind_param("i", $question_id);
 $comments_stmt->execute();
 $comments_result = $comments_stmt->get_result();
 
-// Handle answer form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['answer_body'])) {
     $answer_body = $_POST['answer_body'];
     $answer_image_url = null;
 
-    // Handle optional image upload
     if (!empty($_FILES["answer_image"]["name"])) {
-        $target_dir = "../uploads/"; // Ensure the uploads folder exists in the correct directory
+        $target_dir = "../uploads/"; 
         $target_file = $target_dir . basename($_FILES["answer_image"]["name"]);
         if (move_uploaded_file($_FILES["answer_image"]["tmp_name"], $target_file)) {
-            $answer_image_url = $target_file; // Store the image path if upload is successful
+            $answer_image_url = $target_file; 
         } else {
             echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
         }
     }
-
-    // Insert answer into the database
     $insert_sql = "INSERT INTO answers (question_id, user_id, answer_body, answer_image_url) VALUES (?, ?, ?, ?)";
     $insert_stmt = $conn->prepare($insert_sql);
     $insert_stmt->bind_param("iiss", $question_id, $_SESSION['user_id'], $answer_body, $answer_image_url);
@@ -69,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment_body'])) {
     $comment_body = $_POST['comment_body'];
     $user_id = $_SESSION['user_id'];
 
-    // Check if parent_id is valid
     $check_sql = "SELECT question_id FROM questions WHERE question_id = ?";
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("i", $parent_id);
@@ -77,13 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment_body'])) {
     $check_result = $check_stmt->get_result();
 
     if ($check_result->num_rows > 0) {
-        // Insert the comment into the database
         $insert_comment_sql = "INSERT INTO comments (parent_id, user_id, comment_body) VALUES (?, ?, ?)";
         $insert_comment_stmt = $conn->prepare($insert_comment_sql);
         $insert_comment_stmt->bind_param("iis", $parent_id, $user_id, $comment_body);
 
         if ($insert_comment_stmt->execute()) {
-            // Redirect back to the answers page after successful comment submission
             header("Location: answers.php?question_id=" . $question_id);
             exit();
         } else {
