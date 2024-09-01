@@ -4,12 +4,10 @@
   <img src="https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Icon_Paimon_Menu.png/revision/latest?cb=20210605102449" height="75" style="display: block; margin: 0 auto;">
 </p>
 
-## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Interactive Dashboard</p>
-
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Product mockup](#product-mockup)
+  * [Mockup](#mockup)
   * [Project description](#project-description)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
@@ -19,47 +17,36 @@
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
    * [Wireframes](#wireframes)
-   * [Custon UI](#custom-ui)
 * [Development Process](#development-process)
     * [Highlights](#highlights)
     * [Challenges](#challenges)
 * [Future Implementation](#future-implementation)
 * [Final Outcome](#final-outcome)
-    * [Mockup Video](#mockup-video)
     * [Video Demonstration](#demonstration-video)
 * [Conclusion](#conclusion)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 ## About the project:
 
-### Product mockup:
-![Mockup](./Wireframes/product_mockup.png)
+### Mockup:
+![MacBook_Dresser_Mockup_3_optimized_10](https://github.com/user-attachments/assets/69bee4e5-0e4c-462f-9f09-288306bf6622)
+
 
 ### Project description:
 As a data-driven developer, my mission was to harness the power of Big Data to create a web application that could analyze and visualize vast data sets in a meaningful way. I eagerly embraced the challenge and explored the world of APIs. Recognizing the overwhelming amount of available information, my goal was to develop an intelligent algorithm that could uncover hidden patterns and connections within the data.
 I carefully selected an API created by GenshinDev, based on the content of the game Genshin Impact by Hoyoverse. With the API in hand, I delved into coding, focusing on efficiently handling large data volumes and creating user-friendly visualizations for data exploration and insights.
 
 ### Built with:
-This project is built with React and Node.js, as well as advanced Javascript and Chart.js.
+This project is built with MySQL and uses Xampp
 
 ## Getting Started:
 
-### Prerequisites:
-
-* [Git](https://git-scm.com/downloads)
-* [Node.js](https://nodejs.org/en)
-* [NPM](https://www.npmjs.com/)
-
 ### How to install:
 
-* React Bootstrap <br> `npm install react-bootstrap bootstrap`
-* React Chartjs 2 <br> `npm i react-chartjs-2 chart.js`
-* React Router DOM <br> `npm i react-router-dom`
-* Axios <br> `npm i axios`
-* Chart.js <br> `npm i chart.js`
-* Bootstrap <br> `npm i bootstrap`
+* Download the files
+* Place the files inside your xampp htdox folder
+* Start Xampp
+* Start Apache and MySQL
+* Enjoy the application
 
 ## Features and Functionality:
 
@@ -76,6 +63,7 @@ The timeline page allows the user to select a character from a dropdown list, an
 During the ideation phase of the project, I decided to use the GenshinDev API, which provides data for the game Genshin Impact by Hoyoverse. My initial plan was to create a team builder for the game's characters, using comparative data to show which characters work better together and which should be replaced. This data would be displayed using a bar chart to show the percentage of how well each character fits within the team, and a radar chart to show their skill strengths. I also planned to display a timeline showing when each character was the most popular in the game's most difficult combat arena, "the abyss." While some aspects of the project evolved during development, these core ideas remained the same.
 
 ### Wireframes:
+Sign In, Sign Up, Main Feed, Post Question, View Question Answers
 
 ![Group 32](https://github.com/user-attachments/assets/6780b456-0121-44d0-86cc-326802b58bb4)
 
