@@ -1,14 +1,11 @@
 <?php
-include '../config.php'; // Include your database connection
-session_start(); // Start the session to access session variables
+include '../config.php';
+session_start(); 
 
-// Get search term from query string, if it exists
 $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
 
-// Sanitize search term to prevent SQL injection
 $searchTerm = $conn->real_escape_string($searchTerm);
 
-// Modify SQL query to include search filter
 $sql = "SELECT q.question_id, q.question_title, q.question_body, q.question_image_url, u.username, q.user_id
         FROM questions q
         JOIN users u ON q.user_id = u.user_id
@@ -51,8 +48,8 @@ img {
 }
 
 .delete-button {
-    background-color: #f44336; /* Red background */
-    color: #fff; /* White text */
+    background-color: #f44336; 
+    color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -61,7 +58,7 @@ img {
 }
 
 .delete-button:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f; 
 }
 
 
@@ -103,7 +100,6 @@ h1 {
         <?php
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                // Check if user_id is set in the row
                 $question_user_id = isset($row['user_id']) ? $row['user_id'] : null;
                 
                 echo "<div class='post'>";
@@ -115,7 +111,6 @@ h1 {
                 if ($row['question_image_url']) {
                     echo "<img src='" . htmlspecialchars($row['question_image_url']) . "' alt='Post Image' class='centered-image' height='300px' width='90%'>";
                 }
-                // Add delete button if the user is the owner of the question
                 if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $question_user_id) {
                     echo "<form action='delete_question.php' method='post' style='display:inline;'>";
                     echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($row['question_id']) . "'>";
