@@ -47,10 +47,15 @@ This project is built with MySQL, PHP and uses Xampp
 The web application consists of five main pages:
 
 Sign Up and Log In Pages: These pages handle user registration and authentication.
+
 Main Feed: This page displays all the questions posted by users, along with any attached images. Users can delete only the questions they have created. The page also features a search bar for finding relevant questions. By clicking on a question’s title, users are directed to the Answer page.
+
 Answer Page: This page displays the selected question, its corresponding answers, and any comments. Users can post answers, comment on the question, and like both comments and answers.
+
 Profile Page: Users can update their personal information, including their username, email, and password.
+
 Create Question Page: Here, users can compose and post a new question by entering a title, the question body, and optionally adding relevant images.
+
 Additionally, the header on each page includes a navigational link for logging out, which redirects users to the Log In screen.
 
 
