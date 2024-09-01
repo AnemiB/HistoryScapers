@@ -28,38 +28,39 @@
 
 
 ### Project description:
-As a data-driven developer, my mission was to harness the power of Big Data to create a web application that could analyze and visualize vast data sets in a meaningful way. I eagerly embraced the challenge and explored the world of APIs. Recognizing the overwhelming amount of available information, my goal was to develop an intelligent algorithm that could uncover hidden patterns and connections within the data.
-I carefully selected an API created by GenshinDev, based on the content of the game Genshin Impact by Hoyoverse. With the API in hand, I delved into coding, focusing on efficiently handling large data volumes and creating user-friendly visualizations for data exploration and insights.
+The goal of this project was to develop a web application that utilizes server-side technology to store user data and information. I chose to create a Q&A website tailored for history-related questions, allowing users to post and answer questions, as well as comment on historical topics. XAMPP was an ideal choice for this project, as it efficiently handles MySQL and PHP, enabling me to fully leverage its capabilities for managing my databases.
 
 ### Built with:
-This project is built with MySQL and uses Xampp
+This project is built with MySQL, PHP and uses Xampp
 
 ## Getting Started:
 
 ### How to install:
-
 * Download the files
-* Place the files inside your xampp htdox folder
-* Start Xampp
+* Place the historyscapers file inside your xampp htdox folder
+* Place the historyscapers(MySQL) file inside your mysql data forlder, rename file to historyscapers
+* Start XAMPP Control Panel
 * Start Apache and MySQL
-* Enjoy the application
+* Enjoy the web application
 
 ## Features and Functionality:
+The web application consists of five main pages:
 
-The web application consists of three main pages. The home page displays all the characters from the game, allowing the user to select four of them to create a team. As the user clicks on each character, information about them is displayed in the bottom right corner, and a chart dynamically shows the rarity of the selected characters.
+Sign Up and Log In Pages: These pages handle user registration and authentication.
+Main Feed: This page displays all the questions posted by users, along with any attached images. Users can delete only the questions they have created. The page also features a search bar for finding relevant questions. By clicking on a question’s title, users are directed to the Answer page.
+Answer Page: This page displays the selected question, its corresponding answers, and any comments. Users can post answers, comment on the question, and like both comments and answers.
+Profile Page: Users can update their personal information, including their username, email, and password.
+Create Question Page: Here, users can compose and post a new question by entering a title, the question body, and optionally adding relevant images.
+Additionally, the header on each page includes a navigational link for logging out, which redirects users to the Log In screen.
 
-On the compare page, the user can select two characters from dropdown lists to display data about them, as well as three charts showing their hit damage in bar, pie, and polar chart formats.
-
-The timeline page allows the user to select a character from a dropdown list, and then displays all the weapons with the same weapon type as the selected character. At the bottom of the page, a line chart displays the base attacks and rarity of those weapons.
 
 ## Concept Process:
 
 ### Ideation:
-
-During the ideation phase of the project, I decided to use the GenshinDev API, which provides data for the game Genshin Impact by Hoyoverse. My initial plan was to create a team builder for the game's characters, using comparative data to show which characters work better together and which should be replaced. This data would be displayed using a bar chart to show the percentage of how well each character fits within the team, and a radar chart to show their skill strengths. I also planned to display a timeline showing when each character was the most popular in the game's most difficult combat arena, "the abyss." While some aspects of the project evolved during development, these core ideas remained the same.
+For the ideation phase, I envisioned a Q&A website specifically focused on historical questions, as history is a subject with a vast and dispersed range of information. I began by creating wireframes and refined them over time, ultimately arriving at the website's current design.
 
 ### Wireframes:
-Sign In, Sign Up, Main Feed, Post Question, View Question Answers
+Log In, Sign Up, Main Feed, Post Question, View Question Answers
 
 ![Group 32](https://github.com/user-attachments/assets/6780b456-0121-44d0-86cc-326802b58bb4)
 
@@ -67,28 +68,25 @@ Sign In, Sign Up, Main Feed, Post Question, View Question Answers
 ## Development Process
 
 ### Highlights
+Working on this project was a deeply enriching experience for me. One of the most significant aspects was the hands-on practice with database design and management. Although I had some familiarity with these concepts before, this project really allowed me to solidify my understanding of relational integrity and data normalization, which were critical for the smooth operation and scalability of the system.
 
-Personally, I found the experience of working on this project to be immensely rewarding. One of the key highlights for me was the opportunity to learn a new programming language, React.
+I also thoroughly enjoyed the challenge of working with PHP and MySQL. While I had never used these tools in previous projects, this time, I delved into their functionalities, especially in terms of user authentication and managing dynamic content. The complexities I encountered, such as implementing secure password hashing and managing user interactions, really helped me hone my problem-solving abilities.
 
-Another aspect of the project that I found particularly enjoyable was the chance to further improve my understanding of APIs. As someone who has worked with APIs in the past, I was already familiar with the basic concepts and principles involved. However, this project allowed me to delve deeper into the topic and gain a more nuanced understanding of how APIs work, how to use them effectively, and how to troubleshoot issues that might arise.
+Another highlight was the design process. Starting with wireframes and gradually refining them into the final user-friendly interface was both challenging and satisfying.
 
-Overall, I feel that this project was an incredibly valuable learning experience for me. Not only did it allow me to expand my skill set and gain a deeper understanding of key concepts and techniques, but it also gave me the opportunity to work on a real-world project with practical applications. I look forward to building on what I've learned and continuing to grow and develop as a programmer and developer in the future.
+Overall, this project was a significant learning opportunity. It pushed me to expand my technical skills and apply them in a practical sense. I'm looking forward to taking these lessons forward and continuing to grow as a developer and use PHP and MySQL in upcoming projects.
+
+
 
 ### Challenges
+During the development process, I encountered several challenges that required persistence and problem-solving. One of the most frustrating issues was dealing with constant file corruption errors. These errors would often occur unexpectedly, disrupting my workflow and forcing me to repair or restore files frequently. This not only slowed down the development process but also required me to implement more rigorous version control and backup practices to mitigate future risks.
 
-Throughout the course of this project, I faced a number of challenges that tested my skills and pushed me out of my comfort zone. One of the most significant struggles I encountered was related to the API I was working with. Despite my previous experience working with APIs, I found that the structure of this particular API was quite different from what I was used to. This initially threw me off and made it difficult for me to get the API to work as intended.
-
-Another significant challenge I faced during the project was related to the charts that I was working with. Specifically, I struggled with figuring out how to let the charts change dynamically in response to user input. This required a deep understanding of the underlying code that powered the charts, as well as an ability to think creatively about how to implement dynamic functionality.
-
-Overall, while the project presented a number of significant challenges, I feel that it was an incredibly valuable learning experience for me. Through struggling with issues related to the API and the charts, I was able to push my boundaries as a developer and gain new insights into how to approach complex problems. Looking back on the project, I feel a sense of pride in what I was able to accomplish, and I'm excited to apply what I've learned to future projects and challenges.
+Another significant challenge was getting the comments to properly connect with both the answers and the questions through a parent-child relationship in the database. Establishing these relationships was crucial for maintaining the integrity of the data and ensuring that comments were accurately linked to their corresponding answers and questions. It required careful planning of the database schema and a deep understanding of how to structure and query relational data effectively. Overcoming this challenge taught me valuable lessons in database management and reinforced the importance of thorough testing to ensure data consistency.
 
 ## Future Implementation
+Looking back on this project, I see several opportunities for further enhancement and development on the code. I’m eager to enhance the user experience by making it more seamless and intuitive. One way to achieve this is by incorporating features commonly found in established Q&A platforms. For instance, adding profile pictures could personalize the experience, while implementing a more accurate like count would provide users with clearer feedback on the popularity of answers and comments. Expanding the functionality to include other features, such as badges or reputation scores, could further engage users and encourage more interaction on the platform.
 
-Reflecting on my work on this project, there are several areas where I feel there is room for improvement and further development. One of the key areas where I would like to focus in the future is on stabilizing the code and improving consistency. While I was able to get the code working effectively for the purposes of this project, I feel that there is room for improvement in terms of streamlining the code, making it more efficient, and reducing redundancies. In addition, I would like to develop a more consistent coding style and documentation approach, to make the code more accessible to others and easier to maintain over time.
-
-Another area where I would like to expand and enhance the project is in making it more interactive and engaging for users. While the website is functional and provides a useful service, I believe that there is room to add more interactivity and animation to the site, in order to make it more visually appealing and engaging for users. This might involve developing new features and functionalities, such as interactive maps or dynamic data visualizations, or adding subtle animations and effects to various elements of the site.
-
-Finally, I would also like to explore the possibility of incorporating an official API from Hoyoverse, if and when one becomes available. This would allow me to expand the functionality of the site even further, providing users with access to a wider range of data and insights related to the Hoyoverse platform. By incorporating an official API, I would be able to further enhance the usefulness and relevance of the website, while also demonstrating my proficiency and versatility as a developer.
+By focusing on these improvements, I believe the platform can evolve into a more polished and feature-rich application, offering users a better and more engaging experience.
 
 ## Final Outcome
 
@@ -97,10 +95,10 @@ https://drive.google.com/file/d/1w8nUzibAzd-msgpw5JEiZcX5wY6KR4Mz/view?usp=shari
 
 
 ## Conclusion
-This project has been an incredible learning experience for me, and I am truly grateful for the opportunity to work on it. Throughout the course of the project, I have learned so much, from technical skills to project management and collaboration.
+This project has been a profoundly rewarding experience, providing me with invaluable opportunities to grow both technically and professionally. Throughout the development process, I've gained a deeper understanding of the complexities involved in creating a functional and user-friendly web application. From conceptualizing the initial idea to tackling real-world challenges like database management and code stabilization, I’ve learned a great deal about the intricacies of development.
 
-Working on this project has allowed me to put into practice many of the concepts and techniques I have learned in my studies, and it has also challenged me to expand my knowledge and skills. From developing the initial idea to designing and implementing the project, I have gained a deeper understanding of the software development process and the importance of effective communication and teamwork.
+One of the most significant takeaways from this project has been the enhancement of my programming skills, particularly in working with PHP, MySQL, and the broader aspects of web development. The challenges I faced, from file corruption errors to implementing complex parent-child relationships in the database, have pushed me to think critically and refine my approach to problem-solving. These experiences have not only strengthened my technical abilities but also underscored the importance of perseverance and attention to detail.
 
-I am particularly proud of the progress I have made in developing my programming skills. As someone who was relatively new to coding at the start of this project, I am thrilled with the progress I have made and the many new tools and techniques I have learned along the way. I have also gained a greater appreciation for the importance of testing and debugging, and how these skills are critical to developing high-quality software.
+Moreover, this project has highlighted the ongoing nature of development. While I’m proud of the progress I’ve made, I’m also aware of the potential for further improvement and expansion. The future enhancements I’ve identified, such as streamlining the code and enriching the user experience, excite me, as they represent opportunities to continue building on the foundation I've established.
 
-Overall, this project has been an incredibly fulfilling experience, and I am eager to continue working on it and implementing new features and improvements in the future. I believe that this project has not only helped me to develop my technical skills, but has also given me valuable experience working in a team environment and managing a project from start to finish. I am excited to take these skills and experiences with me as I move forward in my career, and I am confident that they will serve me well in whatever challenges lie ahead.
+Overall, this project has been a highly educational and fulfilling journey. It has equipped me with practical skills and insights that will undoubtedly benefit me in my future endeavors. I am eager to continue refining this project and applying what I’ve learned as I advance in my career, confident that these experiences will serve as a strong foundation for whatever challenges lie ahead.
