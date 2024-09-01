@@ -152,7 +152,6 @@ img {
     cursor: pointer;
 }
 
-/* Apply rounded borders to input fields */
 .rounded-input {
     padding: 10px;
     border-radius: 25px;
