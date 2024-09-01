@@ -1,9 +1,5 @@
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Anemi Breytenbach <br> 231178 <br> DV 200 Term 3</p>
 
-<p align="center">
-  <img src="https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Icon_Paimon_Menu.png/revision/latest?cb=20210605102449" height="75" style="display: block; margin: 0 auto;">
-</p>
-
 ## Table of Contents
 
 * [About the Project](#about-the-project)
