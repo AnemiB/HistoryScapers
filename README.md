@@ -92,12 +92,6 @@ Finally, I would also like to explore the possibility of incorporating an offici
 
 ## Final Outcome
 
-### Mockup Video
-
-
-https://user-images.githubusercontent.com/109971278/230770574-3e270853-fc89-4135-88d1-3e389ddd4074.mp4
-
-
 ### Demonstration Video
 
 
