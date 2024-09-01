@@ -1,12 +1,8 @@
 <?php  
-session_start(); // Start the session
+session_start();
 
-require 'config.php'; // Include the config file to connect to the database
-
-// Check if the form was submitted
+require 'config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Get form input values
     $username = $_POST['username'];
     $confirm_username = $_POST['confirm_username'];
     $email = $_POST['email'];
@@ -14,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Validate that username, email, and password match their confirmations
     if ($username != $confirm_username) {
         echo "Usernames do not match.";
     } elseif ($email != $confirm_email) {
@@ -22,32 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($password != $confirm_password) {
         echo "Passwords do not match.";
     } else {
-        // Hash the password for security
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-        // Prepare the SQL query to insert user data into the database
         $sql = "INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, NOW())";
-
-        // Prepare the SQL statement
         $stmt = $conn->prepare($sql);
-
-        // Bind parameters to the SQL query
         $stmt->bind_param("sss", $username, $email, $hashed_password);
-
-        // Execute the query and check for success
         if ($stmt->execute()) {
             echo "Registration complete!";
-            // Optionally, redirect to the login page or main feed
             header("Location: index.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-
-        // Close the statement
         $stmt->close();
     }
-
-    // Close the database connection
     $conn->close();
 }
 ?>
