@@ -77,16 +77,8 @@ During the ideation phase of the project, I decided to use the GenshinDev API, w
 
 ### Wireframes:
 
-![Home](./Wireframes/Homepage.png)
-![Compare](./Wireframes/Comparison%20page.png)
-![Timeline](./Wireframes/Timeline%20page.png)
+![Group 32](https://github.com/user-attachments/assets/6780b456-0121-44d0-86cc-326802b58bb4)
 
-### Custom UI:
-
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Icon_Paimon_Menu.png/revision/latest?cb=20210605102449"  height="75">
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/3/3c/Achievement_Stone_Harbor%27s_Nostalgia_Series_I.png/revision/latest?cb=20210702105315" height="75">
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/0/00/Achievement_Meetings_in_Outrealm_Series_I.png/revision/latest?cb=20210702105309"  height="75">
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/4/4d/Achievement_Sumeru_The_Gilded_Desert_Series_I.png/revision/latest?cb=20220928034653"  height="75">
 
 ## Development Process
 
@@ -136,17 +128,3 @@ Working on this project has allowed me to put into practice many of the concepts
 I am particularly proud of the progress I have made in developing my programming skills. As someone who was relatively new to coding at the start of this project, I am thrilled with the progress I have made and the many new tools and techniques I have learned along the way. I have also gained a greater appreciation for the importance of testing and debugging, and how these skills are critical to developing high-quality software.
 
 Overall, this project has been an incredibly fulfilling experience, and I am eager to continue working on it and implementing new features and improvements in the future. I believe that this project has not only helped me to develop my technical skills, but has also given me valuable experience working in a team environment and managing a project from start to finish. I am excited to take these skills and experiences with me as I move forward in my career, and I am confident that they will serve me well in whatever challenges lie ahead.
-
-
-## Authors
-Mareli Lourens - [Find me on Github](https://github.com/MareliLourens)
-
-## Contact
-Mareli Lourens - [Email](mailto:221119@virtualwindow.co.za)
-<br>
-Project Link - https://github.com/MareliLourens/dv_200_term_1.git
-
-## Acknowledgements
-* [Genshin Impact](https://genshin.hoyoverse.com/en/) <!-- OW reference: HoYoverse, Shanghai Miha Touring Film Technology Co., Ltd. 2020. Genshin Impact. 4.1. GeForce Now, PlayStation 5, PlayStation 4, Android, Microsoft Windows, iOS.mainland China: HoYoverse, worldwide:Cognosphere Pte. Ltd. -->
-* [Genshin Impact Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki) <!-- OW reference: Fandom. 2023. Genshin Impact Wiki. https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki (Accessed 7 November 2023) -->
-* [Genshin Impact API](https://genshin.dev/) <!-- OW reference: Marvin "NurMarvin" Witt. 2020. Fan-Made Genshin Impact API. https://genshin.dev/ (Accessed 7 November 2023) -->
