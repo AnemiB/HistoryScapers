@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+header {
+    background-color: #f8b7c0;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 1%;
+}
+
+.logo {
+    text-align: center;
+    margin-left: 600px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: 14%;
+    margin-top: -6.5%;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 2%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-left: 62%;
+    margin-top: 0.5%;
+    border-radius: 25%;
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 25px;
+    border-color: #ffffff00;
+}
+
+.search-bar button {
+    background-color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 25%;
+}
+
+main {
+    padding: 20px 15%;
+}
+
+h1 {
+    color: #f8b7c0;
+}
+
+.post {
+    background-color: #3c3c3c;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 2rem !important;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 80%;
+    border-radius: 8px;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+h1 {
+    text-align: center;
+  }
+
+.centered-image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 20%;
+}
+
