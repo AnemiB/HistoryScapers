@@ -93,9 +93,7 @@ Finally, I would also like to explore the possibility of incorporating an offici
 ## Final Outcome
 
 ### Demonstration Video
-
-
-https://user-images.githubusercontent.com/109971278/230775565-568ab52f-46fa-4170-a28f-cec0b8478b82.mp4
+https://drive.google.com/file/d/1w8nUzibAzd-msgpw5JEiZcX5wY6KR4Mz/view?usp=sharing
 
 
 ## Conclusion
