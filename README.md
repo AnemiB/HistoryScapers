@@ -36,38 +36,43 @@
 The goal of this project was to develop a web application that utilizes server-side technology to store user data and information. I chose to create a Q&A website tailored for history-related questions, allowing users to post and answer questions, as well as comment on historical topics. XAMPP was an ideal choice for this project, as it efficiently handles MySQL and PHP, enabling me to fully leverage its capabilities for managing my databases.
 
 ### Built with:
-This project is built with MySQL, PHP and uses Xampp
+- [PHP](https://www.php.net/)
+- [MySQL](https://www.mysql.com/)
+- [XAMPP](https://www.apachefriends.org/index.html)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Getting Started:
+Follow the steps below to get a copy of the project running on your local machine.
 
-### How to install:
+### Prerequisites
+
+- Download and install [XAMPP](https://www.apachefriends.org/index.html), which includes Apache, PHP, and MySQL.
+- Make sure your system is running the latest version of PHP and MySQL.
+
+### How to Install:
 * Download the files
-* Place the historyscapers file inside your xampp htdox folder
-* Place the historyscapers(MySQL) file inside your mysql data forlder, rename file to historyscapers
+* Place the `historyscapers` folder inside your XAMPP `htdocs` folder
+* Create a database called `historyscapers` and import the SQL file provided
 * Start XAMPP Control Panel
 * Start Apache and MySQL
-* Enjoy the web application
+* Enjoy the web application by navigating to `http://localhost/historyscapers`
 
+## Features and Functionality:
 ## Features and Functionality:
 The web application consists of five main pages:
 
-Sign Up and Log In Pages: These pages handle user registration and authentication.
+- **Sign Up and Log In Pages**: Handle user registration and authentication.
+- **Main Feed**: Displays all the questions posted by users along with attached images. Users can only delete or update their own questions. The page also features a search bar for finding relevant questions.
+- **Answer Page**: Displays the selected question, answers, and comments. Users can post answers, comment, and like both answers and comments.
+- **Profile Page**: Users can update their personal information, including username, email, and password.
+- **Create Question Page**: Users can post new questions with a title, body, and optional images.
 
-Main Feed: This page displays all the questions posted by users, along with any attached images. Users can delete only the questions they have created. The page also features a search bar for finding relevant questions. By clicking on a question’s title, users are directed to the Answer page.
-
-Answer Page: This page displays the selected question, its corresponding answers, and any comments. Users can post answers, comment on the question, and like both comments and answers.
-
-Profile Page: Users can update their personal information, including their username, email, and password.
-
-Create Question Page: Here, users can compose and post a new question by entering a title, the question body, and optionally adding relevant images.
-
-Additionally, the header on each page includes a navigational link for logging out, which redirects users to the Log In screen.
-
+Each page includes a navigational link to log out and return to the Log In screen.
 
 ## Concept Process:
 
 ### Ideation:
-For the ideation phase, I envisioned a Q&A website specifically focused on historical questions, as history is a subject with a vast and dispersed range of information. I began by creating wireframes and refined them over time, ultimately arriving at the website's current design.
+For the ideation phase, I envisioned a Q&A website specifically focused on historical questions. Starting with wireframes, I refined the design to its current state.
 
 ### Wireframes:
 Log In, Sign Up, Main Feed, Post Question, View Question Answers
@@ -77,38 +82,29 @@ Log In, Sign Up, Main Feed, Post Question, View Question Answers
 
 ## Development Process
 
-### Highlights
-Working on this project was a deeply enriching experience for me. One of the most significant aspects was the hands-on practice with database design and management. Although I had some familiarity with these concepts before, this project really allowed me to solidify my understanding of relational integrity and data normalization, which were critical for the smooth operation and scalability of the system.
+### Implementation Process
 
-I also thoroughly enjoyed the challenge of working with PHP and MySQL. While I had never used these tools in previous projects, this time, I delved into their functionalities, especially in terms of user authentication and managing dynamic content. The complexities I encountered, such as implementing secure password hashing and managing user interactions, really helped me hone my problem-solving abilities.
+- Implemented CRUD functionalities using PHP and MySQL.
+- Styled the application using plain CSS and HTML.
+- Integrated JavaScript for additional frontend functionality.
 
-Another highlight was the design process. Starting with wireframes and gradually refining them into the final user-friendly interface was both challenging and satisfying.
+### Highlights:
+One highlight was the hands-on practice with database design and management. This project solidified my understanding of relational integrity and data normalization. Working with PHP and MySQL, particularly in terms of user authentication and dynamic content, was another enjoyable challenge.
 
-Overall, this project was a significant learning opportunity. It pushed me to expand my technical skills and apply them in a practical sense. I'm looking forward to taking these lessons forward and continuing to grow as a developer and use PHP and MySQL in upcoming projects.
+### Challenges:
+One major challenge was file corruption errors, which required rigorous version control and backup practices. Another challenge was establishing parent-child relationships in the database for comments linked to both questions and answers. Overcoming these taught me valuable database management lessons.
 
-
-
-### Challenges
-During the development process, I encountered several challenges that required persistence and problem-solving. One of the most frustrating issues was dealing with constant file corruption errors. These errors would often occur unexpectedly, disrupting my workflow and forcing me to repair or restore files frequently. This not only slowed down the development process but also required me to implement more rigorous version control and backup practices to mitigate future risks.
-
-Another significant challenge was getting the comments to properly connect with both the answers and the questions through a parent-child relationship in the database. Establishing these relationships was crucial for maintaining the integrity of the data and ensuring that comments were accurately linked to their corresponding answers and questions. It required careful planning of the database schema and a deep understanding of how to structure and query relational data effectively. Overcoming this challenge taught me valuable lessons in database management and reinforced the importance of thorough testing to ensure data consistency.
-
-## Future Implementation
-Looking back on this project, I see several opportunities for further enhancement and development on the code. I’m eager to enhance the user experience by making it more seamless and intuitive. One way to achieve this is by incorporating features commonly found in established Q&A platforms. For instance, adding profile pictures could personalize the experience, while implementing a more accurate like count would provide users with clearer feedback on the popularity of answers and comments. Expanding the functionality to include other features, such as badges or reputation scores, could further engage users and encourage more interaction on the platform.
-
-By focusing on these improvements, I believe the platform can evolve into a more polished and feature-rich application, offering users a better and more engaging experience.
+## Future Implementation:
+In the future, I plan to add features such as profile pictures, an improved like count, and possibly badges or reputation scores to further engage users.
 
 ## Final Outcome
 
 ### Demonstration Video
 https://drive.google.com/file/d/1w8nUzibAzd-msgpw5JEiZcX5wY6KR4Mz/view?usp=sharing
 
+## Roadmap
+ER Diagram
+![history drawio (1)](https://github.com/user-attachments/assets/5b0e7393-fa9b-4f1d-92e4-d694542e4a3d)
 
 ## Conclusion
-This project has been a profoundly rewarding experience, providing me with invaluable opportunities to grow both technically and professionally. Throughout the development process, I've gained a deeper understanding of the complexities involved in creating a functional and user-friendly web application. From conceptualizing the initial idea to tackling real-world challenges like database management and code stabilization, I’ve learned a great deal about the intricacies of development.
-
-One of the most significant takeaways from this project has been the enhancement of my programming skills, particularly in working with PHP, MySQL, and the broader aspects of web development. The challenges I faced, from file corruption errors to implementing complex parent-child relationships in the database, have pushed me to think critically and refine my approach to problem-solving. These experiences have not only strengthened my technical abilities but also underscored the importance of perseverance and attention to detail.
-
-Moreover, this project has highlighted the ongoing nature of development. While I’m proud of the progress I’ve made, I’m also aware of the potential for further improvement and expansion. The future enhancements I’ve identified, such as streamlining the code and enriching the user experience, excite me, as they represent opportunities to continue building on the foundation I've established.
-
-Overall, this project has been a highly educational and fulfilling journey. It has equipped me with practical skills and insights that will undoubtedly benefit me in my future endeavors. I am eager to continue refining this project and applying what I’ve learned as I advance in my career, confident that these experiences will serve as a strong foundation for whatever challenges lie ahead.
+This project has been an enriching experience, allowing me to grow both technically and professionally. I've gained a deeper understanding of database management and web development. Looking ahead, I see opportunities for further improvement and expansion, such as enhancing the user experience and adding new features. This journey has provided valuable lessons that will serve as a foundation for future endeavors.
