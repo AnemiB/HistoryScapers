@@ -1,6 +1,6 @@
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Anemi Breytenbach <br> 231178 <br> DV 200 Term 3</p>
 
-<img src="/images/logowhite.png" alt="Logo" width="140" height="140">
+<img src="historyscapers/images/logowhite.png" alt="Logo" width="140" height="140">
 
 ## Table of Contents
 
