@@ -1,11 +1,9 @@
 <?php
-include '../config.php'; // Include your database connection
-session_start(); // Start the session to access session variables
+include '../config.php'; 
+session_start(); 
 
-// Get the question ID from the URL
 $question_id = $_GET['question_id'] ?? 0;
 
-// Fetch the question details
 $sql = "SELECT q.question_title, q.question_body, q.question_image_url, u.username
         FROM questions q
         JOIN users u ON q.user_id = u.user_id
@@ -15,7 +13,6 @@ $stmt->bind_param("i", $question_id);
 $stmt->execute();
 $question_result = $stmt->get_result();
 
-// Fetch answers to the question with like count and user like status
 $answers_sql = "SELECT a.answer_id, a.answer_body, a.answer_image_url, u.username,
                  (SELECT COUNT(*) FROM likes l WHERE l.post_id = a.answer_id AND l.post_type = 'answer' AND l.status = 1) AS like_count,
                  (SELECT COUNT(*) FROM likes l WHERE l.user_id = ? AND l.post_id = a.answer_id AND l.post_type = 'answer') AS user_like_status
@@ -27,9 +24,7 @@ $answers_stmt->bind_param("ii", $_SESSION['user_id'], $question_id);
 $answers_stmt->execute();
 $answers_result = $answers_stmt->get_result();
 
-
-// Fetch comments for the question with like count and user like status
-$user_id = $_SESSION['user_id']; // Get the current user ID
+$user_id = $_SESSION['user_id']; 
 $comments_sql = "SELECT c.comment_id, c.comment_body, u.username,
                  (SELECT COUNT(*) FROM likes l WHERE l.post_id = c.comment_id AND l.post_type = 'comment' AND l.status = 1) AS like_count,
                  (SELECT COUNT(*) FROM likes l WHERE l.user_id = ? AND l.post_id = c.comment_id AND l.post_type = 'comment') AS user_like_status
@@ -41,24 +36,20 @@ $comments_stmt->bind_param("ii", $user_id, $question_id);
 $comments_stmt->execute();
 $comments_result = $comments_stmt->get_result();
 
-
-// Handle answer form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['answer_body'])) {
     $answer_body = $_POST['answer_body'];
     $answer_image_url = null;
 
-    // Handle optional image upload
     if (!empty($_FILES["answer_image"]["name"])) {
-        $target_dir = "../uploads/"; // Ensure the uploads folder exists in the correct directory
+        $target_dir = "../uploads/";
         $target_file = $target_dir . basename($_FILES["answer_image"]["name"]);
         if (move_uploaded_file($_FILES["answer_image"]["tmp_name"], $target_file)) {
-            $answer_image_url = $target_file; // Store the image path if upload is successful
+            $answer_image_url = $target_file;
         } else {
             echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
         }
     }
 
-    // Insert answer into the database
     $insert_sql = "INSERT INTO answers (question_id, user_id, answer_body, answer_image_url) VALUES (?, ?, ?, ?)";
     $insert_stmt = $conn->prepare($insert_sql);
     $insert_stmt->bind_param("iiss", $question_id, $_SESSION['user_id'], $answer_body, $answer_image_url);
@@ -70,13 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['answer_body'])) {
     $insert_stmt->close();
 }
 
-// Handle comment form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment_body'])) {
     $parent_id = $_POST['parent_id'];
     $comment_body = $_POST['comment_body'];
     $user_id = $_SESSION['user_id'];
 
-    // Check if parent_id is valid
     $check_sql = "SELECT question_id FROM questions WHERE question_id = ?";
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("i", $parent_id);
@@ -84,13 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment_body'])) {
     $check_result = $check_stmt->get_result();
 
     if ($check_result->num_rows > 0) {
-        // Insert the comment into the database
         $insert_comment_sql = "INSERT INTO comments (parent_id, user_id, comment_body) VALUES (?, ?, ?)";
         $insert_comment_stmt = $conn->prepare($insert_comment_sql);
         $insert_comment_stmt->bind_param("iis", $parent_id, $user_id, $comment_body);
 
         if ($insert_comment_stmt->execute()) {
-            // Redirect back to the answers page after successful comment submission
             header("Location: answers.php?question_id=" . $question_id);
             exit();
         } else {
@@ -104,13 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['comment_body'])) {
     $check_stmt->close();
 }
 
-// Handle the like/unlike requests via AJAX
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['like_type'])) {
     $user_id = $_SESSION['user_id'];
     $post_id = $_POST['post_id'];
     $post_type = $_POST['like_type'];
 
-    // Check if the like exists
     $check_like_sql = "SELECT * FROM likes WHERE user_id = ? AND post_id = ? AND post_type = ?";
     $check_like_stmt = $conn->prepare($check_like_sql);
     $check_like_stmt->bind_param("iis", $user_id, $post_id, $post_type);
@@ -118,13 +103,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['like_type'])) {
     $check_like_result = $check_like_stmt->get_result();
 
     if ($check_like_result->num_rows > 0) {
-        // Toggle the like status
         $update_like_sql = "UPDATE likes SET status = IF(status=1, 0, 1) WHERE user_id = ? AND post_id = ? AND post_type = ?";
         $update_like_stmt = $conn->prepare($update_like_sql);
         $update_like_stmt->bind_param("iis", $user_id, $post_id, $post_type);
         $update_like_stmt->execute();
     } else {
-        // Insert a new like if it doesn't exist
         $insert_like_sql = "INSERT INTO likes (user_id, post_id, post_type, status) VALUES (?, ?, ?, 1)";
         $insert_like_stmt = $conn->prepare($insert_like_sql);
         $insert_like_stmt->bind_param("iis", $user_id, $post_id, $post_type);
@@ -196,9 +179,9 @@ $conn->close();
                 if ($answer_row['answer_image_url']) {
                     echo "<div class='photo'><img src='" . htmlspecialchars($answer_row['answer_image_url']) . "' alt='Answer Image'></div>";
                 }
-                // Set the like icon based on user like status
+
                 echo "<img src='" . ($answer_row['user_like_status'] > 0 ? '../images/like.svg' : '../images/notlike.svg') . "' alt='Like Button' class='like-btn' data-post-id='" . $answer_row['answer_id'] . "' data-like-type='answer'>";
-                // Display the like count
+
                 echo "<span class='like-count' id='like-count-" . $answer_row['answer_id'] . "'>" . $answer_row['like_count'] . "</span>";
                 echo "</div>";
                 
@@ -270,13 +253,13 @@ $conn->close();
     }, function(response) {
         response = JSON.parse(response);
         if (response.success) {
-            // Check the current state and toggle accordingly
+            
             if (img.attr('src').includes('notlike.svg')) {
                 img.attr('src', '../images/like.svg');
-                countSpan.text(parseInt(countSpan.text()) + 1); // Increment like count
+                countSpan.text(parseInt(countSpan.text()) + 1); 
             } else {
                 img.attr('src', '../images/notlike.svg');
-                countSpan.text(parseInt(countSpan.text()) - 1); // Decrement like count
+                countSpan.text(parseInt(countSpan.text()) - 1);
             }
         }
     });
