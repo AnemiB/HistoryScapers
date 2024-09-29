@@ -108,8 +108,8 @@ a:hover {
 }
 
 .delete-button {
-    background-color: #660000; /* Red background */
-    color: #fff; /* White text */
+    background-color: #660000; 
+    color: #fff; 
     border: none;
     padding: 10px 15px;
     border-radius: 35px;
@@ -119,7 +119,7 @@ a:hover {
 }
 
 .delete-button:hover {
-    background-color: #8d0303; /* Darker red on hover */
+    background-color: #8d0303; 
 }
 
 .centered-image {
