@@ -2,17 +2,14 @@
 session_start();
 require '../config.php';
 
-// Ensure the user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('You need to log in to edit this post.'); window.location.href = '../index.php';</script>";
     exit();
 }
 
-// Get the question ID from the URL
 $question_id = isset($_GET['question_id']) ? intval($_GET['question_id']) : 0;
 
 if ($question_id > 0) {
-    // Fetch the question details from the database
     $sql = "SELECT question_title, question_body, question_image_url FROM questions WHERE question_id = ? AND user_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ii", $question_id, $_SESSION['user_id']);
@@ -29,9 +26,8 @@ if ($question_id > 0) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $question_title = $_POST['title'];
         $question_body = $_POST['body'];
-        $question_image_url = $question['question_image_url']; // Default to current image
+        $question_image_url = $question['question_image_url'];
 
-        // Handle optional image upload
         if (!empty($_FILES["image"]["name"])) {
             $target_dir = "../uploads/";
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -42,7 +38,6 @@ if ($question_id > 0) {
             }
         }
 
-        // Update the question in the database
         $sql = "UPDATE questions SET question_title = ?, question_body = ?, question_image_url = ? WHERE question_id = ? AND user_id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sssii", $question_title, $question_body, $question_image_url, $question_id, $_SESSION['user_id']);
