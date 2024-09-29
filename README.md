@@ -26,6 +26,7 @@
 * [Conclusion](#conclusion)
 
 ## About the project:
+![Screenshot (12182)](https://github.com/user-attachments/assets/40ef7da5-a123-4abd-b6f3-649818357118)
 
 ### Mockup:
 ![MacBook_Dresser_Mockup_3_optimized_10](https://github.com/user-attachments/assets/69bee4e5-0e4c-462f-9f09-288306bf6622)
