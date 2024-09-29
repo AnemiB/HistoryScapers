@@ -18,12 +18,17 @@
    * [Ideation](#ideation)
    * [Wireframes](#wireframes)
 * [Development Process](#development-process)
+    * [Implementation](#implementation)
     * [Highlights](#highlights)
     * [Challenges](#challenges)
 * [Future Implementation](#future-implementation)
 * [Final Outcome](#final-outcome)
     * [Video Demonstration](#demonstration-video)
 * [Conclusion](#conclusion)
+* [Author](#author)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
 ## About the project:
 ![Screenshot (12182)](https://github.com/user-attachments/assets/40ef7da5-a123-4abd-b6f3-649818357118)
@@ -57,7 +62,6 @@ Follow the steps below to get a copy of the project running on your local machin
 * Start Apache and MySQL
 * Enjoy the web application by navigating to `http://localhost/historyscapers`
 
-## Features and Functionality:
 ## Features and Functionality:
 The web application consists of five main pages:
 
@@ -108,3 +112,23 @@ ER Diagram
 
 ## Conclusion
 This project has been an enriching experience, allowing me to grow both technically and professionally. I've gained a deeper understanding of database management and web development. Looking ahead, I see opportunities for further improvement and expansion, such as enhancing the user experience and adding new features. This journey has provided valuable lessons that will serve as a foundation for future endeavors.
+
+## Author
+
+- **Anemi Breytenbach** - [AnemiB](https://github.com/AnemiB)
+
+## License
+
+Distributed under the MIT License.
+
+## Contact
+
+- **Anemi Breytenbach** - [231178@virtualwindow.co.za] 
+- **Project Link** - [ https://github.com/AnemiB/term3year](https://github.com/AnemiB/term3year)
+
+## Acknowledgements
+
+- [XAMPP](https://www.apachefriends.org/index.html)
+- [PHP](https://www.php.net/)
+- [MySQL](https://www.mysql.com/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
