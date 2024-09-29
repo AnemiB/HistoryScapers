@@ -1,0 +1,146 @@
+body {
+    font-family: 'Lato', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Sofia', cursive;
+    color: #f8b7c0;
+    text-align: center;
+}
+
+header {
+    background-color: #f8b7c0;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 1% !important;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 1%;
+}
+
+.logo {
+    text-align: center;
+    margin-left: 580px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: 14%;
+    margin-top: -6.5%;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 2%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-left: 62%;
+    margin-top: 0.5%;
+    border-radius: 25%;
+}
+
+.search-bar input {
+    padding: 7px !important;
+    background-color: #fff !important;
+    border-radius: 25px !important;
+    height: 29px !important; 
+    border-color: #ffffff00 !important;
+    margin-top: -0.3px !important;
+    width: 176px !important;
+    margin-left: 0% !important;
+}
+
+.search-bar button {
+    background-color: #ffffff00;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 25%;
+    margin-left: -35px;
+}
+
+main {
+    padding: 20px 15%;
+}
+
+form {
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    margin-left: 22%;
+    color: #ffffff;
+}
+
+label {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+input[type="text"], textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 35px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #555;
+    color: #ffffff;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+    color: #ffffff;
+}
+
+button.add-image {
+    background-color: #f8b7c0;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 35px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button.post {
+    padding: 10px 20px;
+    background-color: #800000;
+    color: #ffffff;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 22%;
+    margin-left: 39%;
+}
+
+button.post:hover {
+    background-color: #8b0000; 
+    color: #fff;
+}
