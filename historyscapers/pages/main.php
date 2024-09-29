@@ -5,7 +5,6 @@ session_start();
 $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
 $searchTerm = $conn->real_escape_string($searchTerm);
 
-// Only show active posts for regular users; admins can see all posts
 if ($_SESSION['role'] == 'admin') {
     $sql = "SELECT q.question_id, q.question_title, q.question_body, q.question_image_url, q.status, u.username, q.user_id
             FROM questions q
@@ -65,7 +64,6 @@ if (!$result) {
             while($row = $result->fetch_assoc()) {
                 $question_user_id = isset($row['user_id']) ? $row['user_id'] : null;
 
-                // Ensure 'status' exists before using it
                 if (isset($row['status']) && $row['status'] == 'pending_deletion' && $_SESSION['role'] == 'admin') {
                     echo "<div class='post pending'>";
                     echo "<span class='status'>Pending Deletion</span>";
@@ -82,7 +80,6 @@ if (!$result) {
                     echo "<div class='photo'><img src='" . htmlspecialchars($row['question_image_url']) . "' alt='Post Image'></div>";
                 }
 
-                // Admin can edit/delete all posts, regular users can edit/delete only their own posts
                 if (isset($_SESSION['user_id']) && ($_SESSION['user_id'] == $question_user_id || $_SESSION['role'] == 'admin')) {
                     echo "<form action='delete_question.php' method='post' style='display:inline;'>";
                     echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($row['question_id']) . "'>";
